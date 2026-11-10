@@ -1,0 +1,150 @@
+﻿
+==========================================================================
+0. PARAMETROS  (ML-KEM-512, FIPS 203 Tablas 2 y 3)
+==========================================================================
+  k=2  eta1=3  eta2=2  du=10  dv=4
+  |ek| = 800 B   |dk| = 1632 B   |c_kem| = 768 B
+
+==========================================================================
+1. GENERACION DE LLAVES  (ML-KEM.KeyGen)
+==========================================================================
+  llave publica  ek (800 B): 1161A18B62C280F893E411904D72A97CD9326B4127D2163F...
+  llave privada  dk (1632 B): (no se imprime completa)
+  validacion FIPS 203 7.2/7.3: OK
+  tiempo: 4.58 ms
+
+==========================================================================
+2. ENCAPSULAMIENTO  (ML-KEM.Encaps -> llave + secreto)
+==========================================================================
+  secreto K (32 B): A05111169BEA734F2FE6F3FA05F22CAF773A1C25E7B0E9092678B13F3EA44B4B
+  ciphertext KEM (768 B): 70EE5F693121E3CDA28719BEBB7B2CE688AF713CF43B8A01...
+  tiempo: 5.61 ms
+
+==========================================================================
+3. CIFRADO DEL MENSAJE  (KEM-DEM: HKDF-SHA256 + AES-256-GCM)
+==========================================================================
+  mensaje original (28 B): b'Mensaje de prueba ML-KEM-512'
+  paquete (832 B): 5051434801010300ADEAD7E3E82574A0866BE9E457005348...
+  tiempo: 7.08 ms
+
+==========================================================================
+4. DESENCAPSULAMIENTO  (ML-KEM.Decaps -> mismo secreto)
+==========================================================================
+  secreto K' (32 B): A05111169BEA734F2FE6F3FA05F22CAF773A1C25E7B0E9092678B13F3EA44B4B
+  K == K' : True
+  tiempo: 8.28 ms
+
+==========================================================================
+5. DESCIFRADO DEL MENSAJE
+==========================================================================
+  mensaje recuperado (28 B): b'Mensaje de prueba ML-KEM-512'
+  tiempo: 7.92 ms
+
+  RESULTADO: OK - mensaje identico
+
+==========================================================================
+6. PRUEBA NEGATIVA: paquete alterado debe ser rechazado
+==========================================================================
+  RECHAZADO correctamente: autenticacion AES-256-GCM fallida: paquete alterado o llave incorrecta
+
+Tiempos totales: keygen=4.58 ms, encaps=5.61 ms, encrypt=7.08 ms, decaps=8.28 ms, decrypt=7.92 ms
+
+==========================================================================
+0. PARAMETROS  (ML-KEM-768, FIPS 203 Tablas 2 y 3)
+==========================================================================
+  k=3  eta1=2  eta2=2  du=10  dv=4
+  |ek| = 1184 B   |dk| = 2400 B   |c_kem| = 1088 B
+
+==========================================================================
+1. GENERACION DE LLAVES  (ML-KEM.KeyGen)
+==========================================================================
+  llave publica  ek (1184 B): 4CF34C614C5F2086C24604BE66C1256F213A06157A39241E...
+  llave privada  dk (2400 B): (no se imprime completa)
+  validacion FIPS 203 7.2/7.3: OK
+  tiempo: 6.93 ms
+
+==========================================================================
+2. ENCAPSULAMIENTO  (ML-KEM.Encaps -> llave + secreto)
+==========================================================================
+  secreto K (32 B): A1E0D99C2F5102159E0AFB164F693E15C691B01CF1B9A85F414C58C245F65BA5
+  ciphertext KEM (1088 B): AC9D770FA9C64D531D474CC76E1B1361F50B1891C64278F1...
+  tiempo: 8.65 ms
+
+==========================================================================
+3. CIFRADO DEL MENSAJE  (KEM-DEM: HKDF-SHA256 + AES-256-GCM)
+==========================================================================
+  mensaje original (28 B): b'Mensaje de prueba ML-KEM-768'
+  paquete (1152 B): 505143480102044069906AFCB9482317412624F136BE7031...
+  tiempo: 10.08 ms
+
+==========================================================================
+4. DESENCAPSULAMIENTO  (ML-KEM.Decaps -> mismo secreto)
+==========================================================================
+  secreto K' (32 B): A1E0D99C2F5102159E0AFB164F693E15C691B01CF1B9A85F414C58C245F65BA5
+  K == K' : True
+  tiempo: 11.82 ms
+
+==========================================================================
+5. DESCIFRADO DEL MENSAJE
+==========================================================================
+  mensaje recuperado (28 B): b'Mensaje de prueba ML-KEM-768'
+  tiempo: 12.05 ms
+
+  RESULTADO: OK - mensaje identico
+
+==========================================================================
+6. PRUEBA NEGATIVA: paquete alterado debe ser rechazado
+==========================================================================
+  RECHAZADO correctamente: autenticacion AES-256-GCM fallida: paquete alterado o llave incorrecta
+
+Tiempos totales: keygen=6.93 ms, encaps=8.65 ms, encrypt=10.08 ms, decaps=11.82 ms, decrypt=12.05 ms
+
+==========================================================================
+0. PARAMETROS  (ML-KEM-1024, FIPS 203 Tablas 2 y 3)
+==========================================================================
+  k=4  eta1=2  eta2=2  du=11  dv=5
+  |ek| = 1568 B   |dk| = 3168 B   |c_kem| = 1568 B
+
+==========================================================================
+1. GENERACION DE LLAVES  (ML-KEM.KeyGen)
+==========================================================================
+  llave publica  ek (1568 B): 3D1632B51ABD3DAB33B6661E7E7813910C0D8C2C2FD68182...
+  llave privada  dk (3168 B): (no se imprime completa)
+  validacion FIPS 203 7.2/7.3: OK
+  tiempo: 10.44 ms
+
+==========================================================================
+2. ENCAPSULAMIENTO  (ML-KEM.Encaps -> llave + secreto)
+==========================================================================
+  secreto K (32 B): 0490D7585BD44A67DB1FBCEF2ACE2B8F6F349CE37C945169ACE9845199A9CC1F
+  ciphertext KEM (1568 B): D378F82546B0E259562DD294D65ADB3E85C838E4462433CD...
+  tiempo: 12.63 ms
+
+==========================================================================
+3. CIFRADO DEL MENSAJE  (KEM-DEM: HKDF-SHA256 + AES-256-GCM)
+==========================================================================
+  mensaje original (29 B): b'Mensaje de prueba ML-KEM-1024'
+  paquete (1633 B): 50514348010306207F0958F71876E95B6B2210F6685C2372...
+  tiempo: 14.00 ms
+
+==========================================================================
+4. DESENCAPSULAMIENTO  (ML-KEM.Decaps -> mismo secreto)
+==========================================================================
+  secreto K' (32 B): 0490D7585BD44A67DB1FBCEF2ACE2B8F6F349CE37C945169ACE9845199A9CC1F
+  K == K' : True
+  tiempo: 16.62 ms
+
+==========================================================================
+5. DESCIFRADO DEL MENSAJE
+==========================================================================
+  mensaje recuperado (29 B): b'Mensaje de prueba ML-KEM-1024'
+  tiempo: 16.55 ms
+
+  RESULTADO: OK - mensaje identico
+
+==========================================================================
+6. PRUEBA NEGATIVA: paquete alterado debe ser rechazado
+==========================================================================
+  RECHAZADO correctamente: autenticacion AES-256-GCM fallida: paquete alterado o llave incorrecta
+
+Tiempos totales: keygen=10.44 ms, encaps=12.63 ms, encrypt=14.00 ms, decaps=16.62 ms, decrypt=16.55 ms

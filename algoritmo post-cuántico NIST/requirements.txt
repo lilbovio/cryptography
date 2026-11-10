@@ -1,0 +1,3 @@
+# Dependencia de ejecucion de la capa simetrica (AES-256-GCM y HKDF).
+# La implementacion de ML-KEM usa solo la biblioteca estandar de Python.
+cryptography>=42

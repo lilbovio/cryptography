@@ -1,0 +1,91 @@
+﻿python : test_flujo_correcto (test_failures.ControlPositivo.test_flujo_correcto) ... ok
+En línea: 1 Carácter: 83
++ ... -cuántico NIST"; python -m unittest discover -s tests -v 2>&1 | Out-F ...
++                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (test_flujo_corr...orrecto) ... ok:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+test_F02_paquete_alterado_es_rechazado (test_failures.FallasDelEsquemaHibrido.test_F02_paquete_alterado_es_rechazado)
+F-02: cualquier bit alterado -> IntegrityError/PacketError, sin dato. ... ok
+test_F03_llave_privada_incorrecta_no_descifra 
+(test_failures.FallasDelEsquemaHibrido.test_F03_llave_privada_incorrecta_no_descifra)
+F-03: dk de otra sesion -> IntegrityError, no texto plano. ... ok
+test_F07_parametro_del_paquete_no_se_degrada 
+(test_failures.FallasDelEsquemaHibrido.test_F07_parametro_del_paquete_no_se_degrada)
+F-07: paquete de otro conjunto -> PacketError (sin downgrade). ... ok
+test_F08_tamano_de_mensaje_invalido (test_failures.FallasDelEsquemaHibrido.test_F08_tamano_de_mensaje_invalido)
+F-08: plaintext no-bytes -> error explicito (control de tipos). ... ok
+test_F10_paquete_truncado_o_sin_tag (test_failures.FallasDelEsquemaHibrido.test_F10_paquete_truncado_o_sin_tag)
+F-10: quitar bytes (incluido el tag) -> rechazo, nunca texto plano. ... ok
+test_F11_paquete_con_magic_incorrecto (test_failures.FallasDelEsquemaHibrido.test_F11_paquete_con_magic_incorrecto)
+F-11: magic distinto -> PacketError (no se interpreta como valido). ... ok
+test_F01_ciphertext_alterado_no_revela_el_secreto 
+(test_failures.FallasDelKEM.test_F01_ciphertext_alterado_no_revela_el_secreto)
+F-01: c alterado -> rechazo implicito (K_bar), nunca el K original. ... ok
+test_F04_ek_no_canonica_es_rechazada (test_failures.FallasDelKEM.test_F04_ek_no_canonica_es_rechazada)
+F-04: ek con coeficiente >= q -> MLKEMError (modulus check). ... ok
+test_F05_dk_con_hash_inconsistente_es_rechazada 
+(test_failures.FallasDelKEM.test_F05_dk_con_hash_inconsistente_es_rechazada)
+F-05: dk cuyo H(ek) no coincide -> MLKEMError (hash check). ... ok
+test_F06_longitudes_incorrectas (test_failures.FallasDelKEM.test_F06_longitudes_incorrectas)
+F-06: longitudes invalidas -> MLKEMError explicito. ... ok
+test_F09_decaps_con_ciphertext_de_longitud_incorrecta 
+(test_failures.FallasDelKEM.test_F09_decaps_con_ciphertext_de_longitud_incorrecta)
+F-09: c con longitud distinta a la oficial -> error, no basura. ... ok
+test_every_byte_is_authenticated (test_hybrid.TestDemAuthentication.test_every_byte_is_authenticated)
+Cambiar un bit en cualquier posicion debe fallar (o rechazarse). ... ok
+test_kem_ciphertext_tamper (test_hybrid.TestDemAuthentication.test_kem_ciphertext_tamper) ... ok
+test_nonce_tamper (test_hybrid.TestDemAuthentication.test_nonce_tamper) ... ok
+test_tag_tamper (test_hybrid.TestDemAuthentication.test_tag_tamper) ... ok
+test_wrong_aad (test_hybrid.TestDemAuthentication.test_wrong_aad) ... ok
+test_hkdf_is_deterministic_and_binds_ciphertext 
+(test_hybrid.TestHybridRoundtrip.test_hkdf_is_deterministic_and_binds_ciphertext)
+Dos c_kem distintos producen llaves AES distintas con el mismo K. ... ok
+test_roundtrip_all_sets (test_hybrid.TestHybridRoundtrip.test_roundtrip_all_sets) ... ok
+test_secret_agreement (test_hybrid.TestHybridRoundtrip.test_secret_agreement)
+El KEM produce el mismo secreto en emisor y receptor. ... ok
+test_utf8_and_large_message (test_hybrid.TestHybridRoundtrip.test_utf8_and_large_message) ... ok
+test_bad_ct_length_field (test_hybrid.TestMalformedPackets.test_bad_ct_length_field) ... ok
+test_bad_magic (test_hybrid.TestMalformedPackets.test_bad_magic) ... ok
+test_bad_version (test_hybrid.TestMalformedPackets.test_bad_version) ... ok
+test_empty (test_hybrid.TestMalformedPackets.test_empty) ... ok
+test_non_bytes_input (test_hybrid.TestMalformedPackets.test_non_bytes_input) ... ok
+test_truncated (test_hybrid.TestMalformedPackets.test_truncated) ... ok
+test_unknown_parameter_set (test_hybrid.TestMalformedPackets.test_unknown_parameter_set) ... ok
+test_header_fields (test_hybrid.TestPacketFormat.test_header_fields) ... ok
+test_packet_has_no_plaintext (test_hybrid.TestPacketFormat.test_packet_has_no_plaintext) ... ok
+test_two_encryptions_differ_by_nonce (test_hybrid.TestPacketFormat.test_two_encryptions_differ_by_nonce) ... ok
+test_wrong_decapsulation_key (test_hybrid.TestWrongKeys.test_wrong_decapsulation_key) ... ok
+test_wrong_parameter_set_rejected (test_hybrid.TestWrongKeys.test_wrong_parameter_set_rejected) ... ok
+test_encaps_deterministic (test_ml_kem.TestDeterminism.test_encaps_deterministic) ... ok
+test_keygen_deterministic (test_ml_kem.TestDeterminism.test_keygen_deterministic) ... ok
+test_rejection_key_is_stable (test_ml_kem.TestImplicitRejection.test_rejection_key_is_stable) ... ok
+test_tampered_ciphertext_yields_rejection_key 
+(test_ml_kem.TestImplicitRejection.test_tampered_ciphertext_yields_rejection_key) ... ok
+test_interop_both_directions (test_ml_kem.TestInteropPQClean.test_interop_both_directions) ... ok
+test_dk_hash_mismatch (test_ml_kem.TestKeyValidation.test_dk_hash_mismatch) ... ok
+test_dk_wrong_length (test_ml_kem.TestKeyValidation.test_dk_wrong_length) ... ok
+test_ek_non_canonical_coefficient (test_ml_kem.TestKeyValidation.test_ek_non_canonical_coefficient) ... ok
+test_ek_wrong_length (test_ml_kem.TestKeyValidation.test_ek_wrong_length) ... ok
+test_encaps_rejects_invalid_ek (test_ml_kem.TestKeyValidation.test_encaps_rejects_invalid_ek) ... ok
+test_valid_keys_pass (test_ml_kem.TestKeyValidation.test_valid_keys_pass) ... ok
+test_decaps_kat (test_ml_kem.TestKnownAnswerVectors.test_decaps_kat) ... ok
+test_encaps_kat (test_ml_kem.TestKnownAnswerVectors.test_encaps_kat) ... ok
+test_kat_source_is_nist_acvp (test_ml_kem.TestKnownAnswerVectors.test_kat_source_is_nist_acvp)
+Trazabilidad: los vectores deben declarar su origen y hash. ... ok
+test_keygen_kat (test_ml_kem.TestKnownAnswerVectors.test_keygen_kat) ... ok
+test_sizes (test_ml_kem.TestParameterSizes.test_sizes) ... ok
+test_byte_encode_decode_roundtrip (test_ml_kem.TestPrimitives.test_byte_encode_decode_roundtrip) ... ok
+test_compress_bounds (test_ml_kem.TestPrimitives.test_compress_bounds) ... ok
+test_ntt_inverse (test_ml_kem.TestPrimitives.test_ntt_inverse) ... ok
+test_ntt_multiplication_matches_schoolbook (test_ml_kem.TestPrimitives.test_ntt_multiplication_matches_schoolbook) ... 
+ok
+test_sample_ntt_and_prf (test_ml_kem.TestPrimitives.test_sample_ntt_and_prf)
+SampleNTT es determinista, uniforme en rango y el PRF depende del contador. ... ok
+test_different_sessions_differ (test_ml_kem.TestRoundtrip.test_different_sessions_differ) ... ok
+test_roundtrip_all_sets (test_ml_kem.TestRoundtrip.test_roundtrip_all_sets) ... ok
+
+----------------------------------------------------------------------
+Ran 56 tests in 16.009s
+
+OK

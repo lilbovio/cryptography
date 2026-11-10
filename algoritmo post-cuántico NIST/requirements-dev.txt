@@ -1,0 +1,6 @@
+-r requirements.txt
+
+# Opcional: implementacion independiente PQClean para la prueba de
+# interoperabilidad (tests/test_ml_kem.py::TestInteropPQClean).
+# Si no esta instalada, esa prueba se omite automaticamente.
+pqcrypto==1.0.0

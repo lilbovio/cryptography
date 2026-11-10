@@ -1,0 +1,12 @@
+﻿Validacion contra el conjunto completo de vectores ACVP del NIST
+Fuente: C:\Users\user\Documents\proyectos\criptografia\algoritmo post-cußntico NIST\tests\vectors\_acvp_cache
+
+categoria                      ok  estado
+--------------------------------------------
+keyGen                     75/75   OK
+encapsulation              75/75   OK
+decapsulation              30/30   OK
+decapsulationKeyCheck      30/30   OK
+encapsulationKeyCheck      30/30   OK
+--------------------------------------------
+TOTAL                     240/240  OK
